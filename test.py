@@ -24,17 +24,30 @@ print()
 def my_max(*args):
     max_n = 0
     for i in args:
-        if type(i) is list:
+        if type(i) is list or type(i) is set:
             for j in i:
                 if j > max_n:
                     max_n = j
         elif type(i) is int:
             if i > max_n:
                 max_n = i
+        elif type(i) is dict:
+            for key, value in i.items():
+                if key > value:
+                    if key > max_n:
+                        max_n = key
+                else:
+                    if value > max_n:
+                        max_n = value
         elif type(i) is str:
             max_n = ''
             for j in i:
                 if j > max_n:
                     max_n = j
     return max_n
-print(my_max([1, 2, 3, 4]))
+print(my_max({1, 2, 3}))
+print(my_max({123: 1412, 61: 9999}))
+print(my_max({123: 1412, 610001: 9999}))
+print(my_max([9, 15, 16, 919, 12*412, 999]))
+print(my_max(9, 19, 141, 9, 1))
+print(my_max('This task was really hard'))
