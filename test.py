@@ -22,10 +22,19 @@ print()
 # Task 3
 
 def my_max(*args):
-    max_value = 0
+    max_n = 0
     for i in args:
-        if i > max_value:
-            max_value = i
-    print(max_value)
-
-my_max(1, 2)
+        if type(i) is list:
+            for j in i:
+                if j > max_n:
+                    max_n = j
+        elif type(i) is int:
+            if i > max_n:
+                max_n = i
+        elif type(i) is str:
+            max_n = ''
+            for j in i:
+                if j > max_n:
+                    max_n = j
+    return max_n
+print(my_max([1, 2, 3, 4]))
