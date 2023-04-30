@@ -45,7 +45,7 @@ def my_max(*args):
                 if j > max_n:
                     max_n = j
     return max_n
-print(my_max({1, 2, 3}))
+print(my_max({1, 2, 31}))
 print(my_max({123: 1412, 61: 9999}))
 print(my_max({123: 1412, 610001: 9999}))
 print(my_max([9, 15, 16, 919, 12*412, 999]))
