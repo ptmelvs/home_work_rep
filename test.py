@@ -3,6 +3,7 @@ def get_student_names(names_dict):
     names_list = [name for name in names_dict.values()]
     return names_list
 
+
 print(get_student_names({
     "Студент 1": "Артем",
     "Студент 2": "Иван",
@@ -17,8 +18,11 @@ def three_args(var1, var2, var3):
         if value:
             print(f'{key} = {value}', end=', ')
 
+
 three_args(None, None, 2)
 print()
+
+
 # Task 3
 
 def my_max(*args):
@@ -45,9 +49,11 @@ def my_max(*args):
                 if j > max_n:
                     max_n = j
     return max_n
+
+
 print(my_max({1, 2, 31}))
 print(my_max({123: 1412, 61: 9999}))
 print(my_max({123: 1412, 610001: 9999}))
-print(my_max([9, 15, 16, 919, 12*412, 999]))
+print(my_max([9, 15, 16, 919, 12 * 412, 999]))
 print(my_max(9, 19, 141, 9, 1))
 print(my_max('This task was really hard'))
